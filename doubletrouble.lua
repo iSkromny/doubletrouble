@@ -2542,7 +2542,7 @@ end
 -- end
 template = {
     name = 'Double Trouble 1.2r',
-    description = 'Double Trouble 1.0 by iSkromny & Nexx, sMNS2, 72x72, 4 players, 2x2 \nTimer: First day: 420, next days: 360',
+    description = 'Double Trouble 1.2r by iSkromny & Nexx, sMNS2, 72x72, 4 players, 2x2 \nTimer: First day: 420, next days: 360',
     minSize = 72,
     maxSize = 72,
     maxPlayers = 4,
