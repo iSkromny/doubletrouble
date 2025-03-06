@@ -99,26 +99,6 @@ function getNativeSubraces(race)
     return { Subrace.Neutral }
 end
 
-
--- function getPlayerZoneMines(race)
---     local zoneMines = { }
-    
---     zoneMines.gold = 2
---     if race == Race.Human then
---         zoneMines.lifeMana = 2
---     elseif race == Race.Dwarf then
---         zoneMines.runicMana = 2
---     elseif race == Race.Undead then
---         zoneMines.deathMana = 2
---     elseif race == Race.Heretic then
---         zoneMines.infernalMana = 2
---     elseif race == Race.Elf then
---         zoneMines.groveMana = 2
---     end
---     return zoneMines
--- end
-
-
 function getPlayerZoneMines(race, raceX)
     local mines = {gold = 2,}
     if race == Race.Human and raceX == Race.Elf then
@@ -958,7 +938,6 @@ function getMagicTower(tier, GuardTower)
     local spellt2summon = {'g000ss0046', 'g000ss0047', 'g000ss0008', 'g000ss0066', 'g000ss0103'}
     local spellt3 = {'g000ss0206', 'g000ss0207', 'g000ss0089', 'g000ss0051', 'g000ss0026', 'g000ss0011', 'g000ss0018', 'g000ss0085', 'g000ss0209', 'g000ss0201', 'g000ss0111', 'g000ss0205', 'g000ss0073', 'g000ss0012', 
     'g000ss0013', 'g000ss0208'}
-    -- local spellt4 =  {'g000ss0055', 'g000ss0036', 'g000ss0082', 'g000ss0116', 'g000ss0076', 'g000ss0114', 'g000ss0017', 'g000ss0115', 'g000ss0035', 'g000ss0075'}
 
     local SpellList = { }
     if tier == 1 then
@@ -1631,31 +1610,26 @@ function getReward(Type, Zone)
         table.insert(rewardItems, {id = 'g001ig0378', min = 4, max = 4})
         table.insert(rewardItems, {id = 'g000ig0006', min = 4, max = 4})
         table.insert(rewardItems, {id = 'g000ig0018', min = 1, max = 1})
-        -- table.insert(rewardItems, {id = ArtT1[math.random(#ArtT1)], min = 1, max = 1})
         for i = 1,2 do
             local a = math.random(1, #ArtT1)
             table.insert(rewardItems, {id = ArtT1[a], min = 1, max = 1})
             table.remove(ArtT1, a)
         end
-        -- table.insert(rewardItems, {id = ArtT2[math.random(#ArtT2)], min = 1, max = 1})
         for i = 1,2 do
             a = math.random(1, #ArtT2)
             table.insert(rewardItems, {id = ArtT2[a], min = 1, max = 1})
             table.remove(ArtT2, a)
         end
-        -- table.insert(rewardItems, {id = BannerT1[math.random(#BannerT1)], min = 1, max = 1 })
         for i = 1,2 do
             b = math.random(1, #BannerT1)
             table.insert(rewardItems, {id = BannerT1[b], min = 1, max = 1})
             table.remove(BannerT1, b)
         end
-        -- table.insert(rewardItems, {id = BannerT2[math.random(#BannerT2)], min = 1, max = 1 })
         for i = 1,2 do
             b = math.random(1, #BannerT2)
             table.insert(rewardItems, {id = BannerT2[b], min = 1, max = 1})
             table.remove(BannerT2, b)
         end
-        -- table.insert(rewardItems, {id = TravelT2[math.random(#TravelT2)], min = 1, max = 1 })
         for i = 1,2 do
             t = math.random(1, #TravelT1)
             table.insert(rewardItems, {id = TravelT1[t], min = 1, max = 1})
@@ -1668,7 +1642,6 @@ function getReward(Type, Zone)
         end
         table.insert(rewardItems, {id = JewelT1[math.random(#JewelT1)], min = 1, max = 1})
         
-        -- table.insert(rewardItems, {id = JewelT2[math.random(#JewelT2)], min = 1, max = 1})
         for i = 1,3 do
             j = math.random(1, #JewelT2)
             table.insert(rewardItems, {id = JewelT2[j], min = 1, max = 1})
@@ -1824,25 +1797,21 @@ function getReward(Type, Zone)
         table.insert(rewardItems, {id = 'g001ig0378', min = 4, max = 4})
         table.insert(rewardItems, {id = 'g000ig0006', min = 4, max = 4})
         table.insert(rewardItems, {id = 'g000ig0018', min = 3, max = 3})
-        -- table.insert(rewardItems, {id = ArtT3[math.random(#ArtT3)], min = 1, max = 1})
         for i = 1,4 do
             a = math.random(1, #ArtT3)
             table.insert(rewardItems, {id = ArtT3[a], min = 1, max = 1})
             table.remove(ArtT3, a)
         end
-        -- table.insert(rewardItems, {id = BannerT3[math.random(#BannerT3)], min = 1, max = 1 })
         for i = 1,4 do
             b = math.random(1, #BannerT3)
             table.insert(rewardItems, {id = BannerT3[b], min = 1, max = 1})
             table.remove(BannerT3, b)
         end
-        -- table.insert(rewardItems, {id = TravelT3[math.random(#TravelT3)], min = 1, max = 1 })
         for i = 1,2 do
             t = math.random(1, #TravelT3)
             table.insert(rewardItems, {id = TravelT3[t], min = 1, max = 1})
             table.remove(TravelT3, t)
         end
-        -- table.insert(rewardItems, {id = JewelT3[math.random(#JewelT3)], min = 1, max = 1})
         for i = 1,3 do
             j = math.random(1, #JewelT3)
             table.insert(rewardItems, {id = JewelT3[j], min = 1, max = 1})
@@ -1997,55 +1966,46 @@ function getReward(Type, Zone)
         table.insert(rewardItems, {id = 'g001ig0378', min = 4, max = 4})
         table.insert(rewardItems, {id = 'g000ig0006', min = 4, max = 4})
         table.insert(rewardItems, {id = 'g000ig0018', min = 2, max = 2})
-        -- table.insert(rewardItems, {id = ArtT5[math.random(#ArtT5)], min = 1, max = 1})
         for i = 1,3 do
             a = math.random(1, #ArtT5)
             table.insert(rewardItems, {id = ArtT5[a], min = 1, max = 1})
             table.remove(ArtT3, a)
         end
-        -- table.insert(rewardItems, {id = ArtT4[math.random(#ArtT4)], min = 1, max = 1})
         for i = 1,3 do
             a = math.random(1, #ArtT4)
             table.insert(rewardItems, {id = ArtT4[a], min = 1, max = 1})
             table.remove(ArtT4, a)
         end
-        -- table.insert(rewardItems, {id = ArtT3[math.random(#ArtT3)], min = 1, max = 1})
         for i = 1,2 do
             a = math.random(1, #ArtT3)
             table.insert(rewardItems, {id = ArtT3[a], min = 1, max = 1})
             table.remove(ArtT3, a)
         end
-        -- table.insert(rewardItems, {id = BannerT4[math.random(#BannerT4)], min = 1, max = 1})
         for i = 1,3 do
             b = math.random(1, #BannerT4)
             table.insert(rewardItems, {id = BannerT4[b], min = 1, max = 1})
             table.remove(BannerT4, b)
         end
-        -- table.insert(rewardItems, {id = BannerT3[math.random(#BannerT3)], min = 1, max = 1})
         for i = 1,2 do
             b = math.random(1, #BannerT3)
             table.insert(rewardItems, {id = BannerT3[b], min = 1, max = 1})
             table.remove(BannerT3, b)
         end
-        -- table.insert(rewardItems, {id = TravelT3[math.random(#TravelT3)], min = 1, max = 1})
         for i = 1,2 do
             t = math.random(1, #TravelT3)
             table.insert(rewardItems, {id = TravelT3[t], min = 1, max = 1})
             table.remove(TravelT3, t)
         end
-        -- table.insert(rewardItems, {id = TravelT2[math.random(#TravelT2)], min = 1, max = 1})
         for i = 1,1 do
             t = math.random(1, #TravelT2)
             table.insert(rewardItems, {id = TravelT2[a], min = 1, max = 1})
             table.remove(TravelT2, t)
         end
-        -- table.insert(rewardItems, {id = JewelT4[math.random(#JewelT4)], min = 1, max = 1})
         for i = 1,2 do
             j = math.random(1, #JewelT4)
             table.insert(rewardItems, {id = JewelT4[j], min = 1, max = 1})
             table.remove(JewelT4, j)
         end
-        -- table.insert(rewardItems, {id = JewelT3[math.random(#JewelT3)], min = 1, max = 1})
         for i = 1,2 do
             j = math.random(1, #JewelT3)
             table.insert(rewardItems, {id = JewelT3[j], min = 1, max = 1})
@@ -2482,35 +2442,31 @@ function getConnections()
     return {
 
 		{from = 0, to = 1, guard = getGuard(11, getReward('guardsmeja', 'GOtoLRCenter'))},
-		-- {from = 1, to = 0, guard = getGuard(11, getReward('guardsmeja2', 'GOtoLRCenter'))},
 
         {from = 1, to = 2, guard = getGuard(11, getReward('guardsmeja', 'GOtoLRCenter'))},
-        -- {from = 2, to = 1, guard = getGuard(11, getReward('guardsmeja2', 'GOtoLRCenter'))},
 
         {from = 2, to = 3, guard = getGuard(10, getReward('guardResp', 'GOtosmeja'))},
 
 
-        {from = 3, to = 4 },
-        {from = 4, to = 5 },
+        {from = 3, to = 4},
+        {from = 4, to = 5},
 
-        {from = 3, to = 5, guard = getGuard()},
+        {from = 3, to = 5},
   
 
         {from = 5, to = 6, guard = getGuard(10, getReward('guardResp', 'GOtosmeja'))},
 
         {from = 6, to = 7, guard = getGuard(11, getReward('guardsmeja', 'GOtoLRCenter'))},
-        -- {from = 6, to = 5, guard = getGuard(11, getReward('guardsmeja2', 'GOtoLRCenter'))},
 
         {from = 7, to = 8, guard = getGuard(11, getReward('guardsmeja', 'GOtoLRCenter'))},
-        -- {from = 7, to = 6, guard = getGuard(11, getReward('guardsmeja2', 'GOtoLRCenter'))},
 
         {from = 8, to = 9, guard = getGuard(10, getReward('guardResp', 'GOtosmeja'))},
 
-        {from = 9, to = 11, guard = getGuard()},
+        {from = 9, to = 11},
      
 
-        {from = 9, to = 10 },
-        {from = 10, to = 11 },
+        {from = 9, to = 10},
+        {from = 10, to = 11},
     
 
         {from = 11, to = 0, guard = getGuard(10, getReward('guardResp', 'GOtosmeja'))},
@@ -2532,14 +2488,7 @@ function getTemplateContents(races)
 		connections = getConnections()
 	}
 end
--- function getTemplateContents(races)
---     local contents = {}
---     contents.diplomacy = getDiplomacyRelations(races)
---     contents.zones = getZones(races)
---     contents.connections = getZoneConnections(races)
 
---     return contents
--- end
 template = {
     name = 'Double Trouble 1.2r',
     description = 'Double Trouble 1.2r by iSkromny & Nexx, sMNS2, 72x72, 4 players, 2x2 \nTimer: First day: 420, next days: 360',
@@ -2744,12 +2693,7 @@ template = {
         'g000uu2008', -- ����� ������
         'g000uu8318', -- ����� ������ (�����)
         'g000uu8220', -- ����������
-        '', -- 
-        '', -- 
-        '', -- 
-        '', -- 
-        '', -- 
-        '', -- 
+
 
 
         },
