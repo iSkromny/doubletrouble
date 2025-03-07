@@ -1,5 +1,5 @@
---- template DoubleTrouble1.2
---- 
+--- template DoubleTrouble
+--- author: iSkromny
 --- 
 --- 
 function getDiplomacyRelations(races)
@@ -582,11 +582,11 @@ function getGuard(tier, itemsTable)
         expValueGuard.min = 420
         expValueGuard.max = 500
     elseif (tier == 11) then
-        expValueGuard.min = 1500
-        expValueGuard.max = 2100
+        expValueGuard.min = 1350
+        expValueGuard.max = 1950
     elseif (tier == 12) then
-        expValueGuard.min = 2100
-        expValueGuard.max = 3100
+        expValueGuard.min = 1900
+        expValueGuard.max = 2800
     end
     return {
         subraceTypes = squad,
@@ -596,6 +596,79 @@ function getGuard(tier, itemsTable)
         }
     }
 end
+
+function getGO(tier, itemsTable)
+    local squad = { }
+    if (tier == 10)  then squad = SubraceSquad(3)
+    elseif (tier == 11) then squad = SubraceSquad(4)
+    
+    end
+    local expValueGuard = { }
+    if (tier == 10) then
+        expValueGuard.min = 420
+        expValueGuard.max = 500
+    elseif (tier == 11) then
+        expValueGuard.min = 1350
+        expValueGuard.max = 1950
+    end
+    return {
+        subraceTypes = squad,
+        leaderIds = {
+            'g000uu5356',      --Паладин                                  50.00        330.00      
+            'g000uu7527',      --Фанатик                                  50.00        330.00      
+            'g000uu8208',      --Черный рыцарь                            50.00        330.00      
+            'g000uu8234',      --Кокильяр                                 50.00        330.00      
+            'g000uu8243',      --Жрец Имира                               50.00        330.00      
+            'g000uu8302',      --Хранитель Ордена                         50.00        330.00      
+            'g000uu8313',      --Кастелян                                 50.00        330.00      
+            'g000uu8236',      --Баррантор                                50.00        335.00      
+            'g000uu8239',      --Драуг                                    50.00        335.00      
+            'g000uu7548',      --Черный тролль                            44.00        335.00      
+            'g000uu8319',      --Бааван ши                                50.00        335.00      
+            'g000uu8317',      --Хан орков                                46.00        345.00      
+            'g000uu7532',      --Якшини                                   50.00        350.00      
+            'g000uu7602',      --Соглядатай                               40.00        350.00      
+            'g000uu6017',      --Костяной лорд                            50.00        360.00      
+            'g000uu7576',      --Медный дракон                            43.00        370.00      
+            'g000uu7575',      --Изумрудный дракон                        40.00        380.00      
+            'g000uu5108',      --Повелитель эльфов                        40.00        390.00      
+            'g000uu7625',      --Темный оракул                            52.00        395.00      
+            'g000uu5129',      --Морской змей                             50.00        400.00      
+            'g000uu8260',      --Искуситель                               54.00        400.00      
+            'g000uu7600',      --Длань инквизиции                         50.00        420.00      
+            'g000uu8257',      --Громовержец                              54.00        430.00      
+            'g000uu7591',      --Лесоруб                                  45.00        430.00      
+            'g000uu5367',      --Ониксовая гаргулья                       40.00        445.00      
+            'g000uu7509',      --Голем                                    42.00        450.00      
+            'g000uu8210',      --Гибельный рой                            40.00        450.00      
+            'g000uu7530',      --Жрец Смерти                              50.00        475.00      
+            'g000uu5358',      --Наместник Вотана                         42.00        500.00      
+            'g000uu5380',      --Вирм                                     48.00        500.00      
+            'g000uu7511',      --Каменный предок                          50.00        500.00      
+            'g000uu8193',      --Бехемот                                  48.00        500.00      
+            'g000uu8223',      --Верховный некромант                      42.00        500.00      
+            'g000uu8226',      --Сын Земли                                48.00        500.00      
+            'g000uu8280',      --Пещерный паук                            40.00        500.00      
+            'g000uu7502',      --Пожиратель                               42.00        535.00      
+            'g000uu7519',      --Вердант                                  50.00        550.00      
+            'g000uu7601',      --Адепт культа                             51.00        550.00      
+            'g000uu7554',      --Йорм                                     40.00        565.00      
+            'g000uu7596',      --Сюзерен бездны                           47.00        575.00      
+            'g000uu8261',      --Костяная госпожа                         55.00        595.00      
+            'g000uu5123',      --Зеленый дракон                           43.00        650.00      
+            'g000uu6007',      --Темный эльф-жрец                         55.00        735.00      
+            'g000uu7593',      --Болотный страж                           55.00        775.00      
+            'g000uu8176',      --Вестник поглощения                       46.00        900.00      
+            'g000uu8177',      --Вестник немощи                           46.00        900.00      
+            'g000uu8187'      --Вестник перемен                          46.00        900.00  
+        },
+        value = expValueGuard,
+        loot = {
+            items = itemsTable
+        }
+    }
+end
+
 
 function getGuardAggressive(tier, itemsTable)
     local squad = { }
@@ -628,11 +701,11 @@ function getGuardAggressive(tier, itemsTable)
         expValueGuard.min = 420
         expValueGuard.max = 500
     elseif (tier == 11) then
-        expValueGuard.min = 1500
-        expValueGuard.max = 2100
+        expValueGuard.min = 1350
+        expValueGuard.max = 1950
     elseif (tier == 12) then
-        expValueGuard.min = 2100
-        expValueGuard.max = 3100
+        expValueGuard.min = 1900
+        expValueGuard.max = 2800
     end
     return {
         subraceTypes = squad,
@@ -644,13 +717,82 @@ function getGuardAggressive(tier, itemsTable)
     }
 end
 
+function getGOAggressive(tier, itemsTable)
+    local squad = { }
+    if (tier == 10)  then squad = SubraceSquad(3)
+    elseif (tier == 11) then squad = SubraceSquad(4)
+    elseif (tier == 12) then squad = SubraceSquad(GO)
+    end
+    local expValueGuard = { }
+    if (tier == 10) then
+        expValueGuard.min = 420
+        expValueGuard.max = 500
+    elseif (tier == 11) then
+        expValueGuard.min = 1350
+        expValueGuard.max = 1950
+    elseif (tier == 12) then
+        expValueGuard.min = 1900
+        expValueGuard.max = 2800
+    end
+    return {
+        subraceTypes = squad,
+        leaderIds = {
+            
+            'g000uu5123',      --Зеленый дракон                           43.00        650.00
+            'g000uu7576',      --Медный дракон                            43.00        370.00
+            'g000uu7575',      --Изумрудный дракон                        40.00        380.00
+            'g000uu6015',      --Король гномов                            57.00        500.00      
+            'g000uu7507',      --Мститель                                 70.00        500.00      
+            'g000uu6001',      --Адское дитя                              65.00        600.00      
+            'g000uu6019',      --Вампиресса                               61.00        600.00      
+            'g000uu7515',      --Танатос                                  70.00        600.00      
+            'g000uu7549',      --Скелет воитель                           64.00        600.00      
+            'g000uu8232',      --Катафрактарий                            58.00        650.00      
+            'g000uu6005',      --Маг Хугин                                70.00        850.00      
+            'g000uu5368',      --Тиамат                                   60.00        900.00      
+            'g000uu5370',      --Демон Бездны                             60.00        900.00      
+            'g000uu7500',      --Гримтурс                                 60.00        900.00      
+            'g000uu7501',      --Змий разложения                          60.00        900.00      
+            'g000uu8195',      --Багряный ангел                           60.00        900.00      
+            'g000uu7555',      --Лиргид                                   58.00        985.00      
+            'g000uu7541',      --Свежеватель                              63.00        1150.00     
+            'g000uu5120',      --Белый дракон                             62.00        1160.00     
+            'g000uu7520',      --Костяной голем                           57.00        1195.00     
+            'g000uu5121',      --Синий дракон                             63.00        1210.00     
+            'g000uu8149',      --Бомбарда                                 70.00        1250.00     
+            'g000uu8217',      --Призрачный дракон                        67.00        1285.00     
+            'g000uu5119',      --Красный дракон                           70.00        1350.00     
+            'g000uu7503',      --Ангел Перерожденный                      64.00        1350.00     
+            'g000uu6016',      --Мантикора                                62.00        1370.00     
+            'g000uu8198',      --Желтый дракон                            66.00        1440.00     
+            'g000uu8259',      --Колосс                                   62.00        1505.00     
+            'g000uu8269',      --Кровавый дракон                          65.00        1550.00     
+            'g000uu5122'      --Черный дракон                            70.00        1620.00     
+        },
+        value = expValueGuard,
+        order = Order.Guard,
+        loot = {
+            items = itemsTable
+        }
+    }
+end
+
+
+
 function guardrnd(tier, itemsTable)
     if math.random() < 0.7 then
         return getGuard(tier, itemsTable)
     else
         return getGuardAggressive(tier, itemsTable)
     end
-    
+end
+
+function getGOrnd(tier, itemsTable)
+    if math.random() < 0.85 then
+        return getGuard(tier, itemsTable)
+    else
+        return getGOAggressive(tier, itemsTable)
+    end
 end
 
 
@@ -838,9 +980,6 @@ function getResourceMarket(Guard)
     }
     end
 
-
-
-
     function getRM(Guard)
         return {
         {
@@ -933,11 +1072,12 @@ function getMagicTower(tier, GuardTower)
     local spellt1 = {'g000ss0044', 'g000ss0045', 'g000ss0002', 'g000ss0007', 'g000ss0021', 'g000ss0178', 'g000ss0192', 'g000ss0152', 'g000ss0134', 'g000ss0191', 'g000ss0065', 'g000ss0003', 'g000ss0023', 
     'g000ss0064', 'g000ss0106', 'g000ss0181', 'g000ss0101', 'g000ss0179', 'g000ss0022'}
     local spellt1summon = {'g000ss0025', 'g000ss0061', 'g000ss0098'}
-    local spellt2 = {'g000ss0180', 'g000ss0050', 'g000ss0049', 'g000ss0185', 'g000ss0107', 'g000ss0123', 'g000ss0034', 'g000ss0197', 'g000ss0005', 'g000ss0001', 'g000ss0010', 'g000ss0016', 'g000ss0121', 
+    local spellt2 = {'g000ss0180', 'g000ss0050', 'g000ss0049', 'g000ss0185', 'g000ss0123', 'g000ss0034', 'g000ss0197', 'g000ss0005', 'g000ss0001', 'g000ss0010', 'g000ss0016', 'g000ss0121', 
     'g000ss0187', 'g000ss0184', 'g000ss0069', 'g000ss0029', 'g000ss0183', 'g000ss0186', 'g000ss0182'}
     local spellt2summon = {'g000ss0046', 'g000ss0047', 'g000ss0008', 'g000ss0066', 'g000ss0103'}
     local spellt3 = {'g000ss0206', 'g000ss0207', 'g000ss0089', 'g000ss0051', 'g000ss0026', 'g000ss0011', 'g000ss0018', 'g000ss0085', 'g000ss0209', 'g000ss0201', 'g000ss0111', 'g000ss0205', 'g000ss0073', 'g000ss0012', 
     'g000ss0013', 'g000ss0208'}
+    -- local spellt4 =  {'g000ss0055', 'g000ss0036', 'g000ss0082', 'g000ss0116', 'g000ss0076', 'g000ss0114', 'g000ss0017', 'g000ss0115', 'g000ss0035', 'g000ss0075'}
 
     local SpellList = { }
     if tier == 1 then
@@ -1006,13 +1146,13 @@ function getMercenariesleft(getGuard, playerRace, playerRace2, playerRace3, play
         end
     end
     if hasHuman then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0001', level = 1, unique = true} i = i + 1 end -- ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu5001', level = 1, unique = true} i = i + 1 end -- ���� ���������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7561', level = 1, unique = true} i = i + 1 end -- �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8311', level = 1, unique = true} i = i + 1 end -- �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0005', level = 1, unique = true} i = i + 1 end -- ����������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0010', level = 1, unique = true} i = i + 1 end -- ���
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu5003', level = 1, unique = true} i = i + 1 end -- ���������
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0001', level = 1, unique = true} i = i + 1 end -- Сквайр
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu5001', level = 1, unique = true} i = i + 1 end -- Боец ополчения
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7561', level = 1, unique = true} i = i + 1 end -- Егерь
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8311', level = 1, unique = true} i = i + 1 end -- Ардет
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0005', level = 1, unique = true} i = i + 1 end -- Инквизитор
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0010', level = 1, unique = true} i = i + 1 end -- Маг
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu5003', level = 1, unique = true} i = i + 1 end -- Ревнитель
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Dwarf then
@@ -1021,12 +1161,12 @@ function getMercenariesleft(getGuard, playerRace, playerRace2, playerRace3, play
         end
     end
     if hasDwarf then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0036', level = 1, unique = true} i = i + 1 end -- ����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0027', level = 1, unique = true} i = i + 1 end -- ����������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0030', level = 1, unique = true} i = i + 1 end -- ������ �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0038', level = 1, unique = true} i = i + 1 end -- �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0041', level = 1, unique = true} i = i + 1 end -- �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g006uu1128', level = 1, unique = true} i = i + 1 end -- ������ ����
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0036', level = 1, unique = true} i = i + 1 end -- Гном
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0027', level = 1, unique = true} i = i + 1 end -- Арбалетчик
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0030', level = 1, unique = true} i = i + 1 end -- Горный Великан
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0038', level = 1, unique = true} i = i + 1 end -- Ветеран
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0041', level = 1, unique = true} i = i + 1 end -- Горец
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g006uu1128', level = 1, unique = true} i = i + 1 end -- Мастер печи
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Heretic then
@@ -1035,13 +1175,13 @@ function getMercenariesleft(getGuard, playerRace, playerRace2, playerRace3, play
         end
     end
     if hasHeretic then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0052', level = 1, unique = true} i = i + 1 end -- ���������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7572', level = 1, unique = true} i = i + 1 end -- ���������� ��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0058', level = 1, unique = true} i = i + 1 end -- �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0056', level = 1, unique = true} i = i + 1 end -- ��������� ��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0064', level = 1, unique = true} i = i + 1 end -- ���������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2003', level = 1, unique = true} i = i + 1 end -- ��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0054', level = 1, unique = true} i = i + 1 end -- ������ �������
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0052', level = 1, unique = true} i = i + 1 end -- Одержимый
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7572', level = 1, unique = true} i = i + 1 end -- Апатитовая горгулья
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0058', level = 1, unique = true} i = i + 1 end -- Демон
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0056', level = 1, unique = true} i = i + 1 end -- Мраморная гаргулья
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0064', level = 1, unique = true} i = i + 1 end -- Демонолог
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2003', level = 1, unique = true} i = i + 1 end -- Мучитель
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0054', level = 1, unique = true} i = i + 1 end -- Чёрный паладин
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Undead then
@@ -1050,14 +1190,14 @@ function getMercenariesleft(getGuard, playerRace, playerRace2, playerRace3, play
         end
     end
     if hasUndead then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0086', level = 1, unique = true} i = i + 1 end -- �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0092', level = 1, unique = true} i = i + 1 end -- ���������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0094', level = 1, unique = true} i = i + 1 end -- ������ ����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0085', level = 1, unique = true} i = i + 1 end -- ���� ���
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0091', level = 1, unique = true} i = i + 1 end -- ���� ����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0082', level = 1, unique = true} i = i + 1 end -- ���������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu5012', level = 1, unique = true} i = i + 1 end -- ���-�����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0088', level = 1, unique = true} i = i + 1 end -- ������ ����
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0086', level = 1, unique = true} i = i + 1 end -- Мертвец
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0092', level = 1, unique = true} i = i + 1 end -- Оборотень
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0094', level = 1, unique = true} i = i + 1 end -- Дракон Рока
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0085', level = 1, unique = true} i = i + 1 end -- Злой дух
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0091', level = 1, unique = true} i = i + 1 end -- Лорд Тьмы
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0082', level = 1, unique = true} i = i + 1 end -- Некромант
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu5012', level = 1, unique = true} i = i + 1 end -- Окр-палач
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0088', level = 1, unique = true} i = i + 1 end -- Скелет-воин
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Elf then
@@ -1066,36 +1206,36 @@ function getMercenariesleft(getGuard, playerRace, playerRace2, playerRace3, play
         end
     end
     if hasElf then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8014', level = 1, unique = true} i = i + 1 end -- �������-��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8015', level = 1, unique = true} i = i + 1 end -- �������-������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8030', level = 1, unique = true} i = i + 1 end -- ������� �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8017', level = 1, unique = true} i = i + 1 end -- �������-������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8019', level = 1, unique = true} i = i + 1 end -- �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8022', level = 1, unique = true} i = i + 1 end -- ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8026', level = 1, unique = true} i = i + 1 end -- �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8021', level = 1, unique = true} i = i + 1 end -- ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2012', level = 1, unique = true} i = i + 1 end -- �������-�������
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8014', level = 1, unique = true} i = i + 1 end -- Контавр-копейщик
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8015', level = 1, unique = true} i = i + 1 end -- Кентавр-латник
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8030', level = 1, unique = true} i = i + 1 end -- Владыка небес
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8017', level = 1, unique = true} i = i + 1 end -- Кентаврь-дикарь
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8019', level = 1, unique = true} i = i + 1 end -- Охотник
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8022', level = 1, unique = true} i = i + 1 end -- Сторож
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8026', level = 1, unique = true} i = i + 1 end -- Чанелер
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8021', level = 1, unique = true} i = i + 1 end -- Бандит
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2012', level = 1, unique = true} i = i + 1 end -- Кентавр Стрелок
     end
-    unitsMercenaries[i] = {id = 'g001uu8284', level = 1, unique = true} i = i + 1 -- ���������� 1750
-    unitsMercenaries[i] = {id = 'g000uu8045', level = 1, unique = true} i = i + 1 -- ������� 1070
-    unitsMercenaries[i] = {id = 'g000uu8247', level = 1, unique = true} i = i + 1 -- ���������� 725
-    unitsMercenaries[i] = {id = 'g001uu7550', level = 1, unique = true} i = i + 1 -- ������ 410
-    unitsMercenaries[i] = {id = 'g001uu7546', level = 1, unique = true} i = i + 1 -- ���-��������� 825
-    unitsMercenaries[i] = {id = 'g000uu5011', level = 1, unique = true} i = i + 1 -- �������-��������� 490
-    unitsMercenaries[i] = {id = 'g000uu5028', level = 1, unique = true} i = i + 1 -- ������ 350
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8218', level = 1, unique = true} i = i + 1 end -- ����� 1750
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7610', level = 1, unique = true} i = i + 1 end -- ������� ����� 490
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7609', level = 1, unique = true} i = i + 1 end -- �������������� 525
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8283', level = 1, unique = true} i = i + 1 end -- �������� ���� 690
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu6106', level = 1, unique = true} i = i + 1 end -- ��������� ������ 1200
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5012', level = 1, unique = true} i = i + 1 end -- ��� ������� 750
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7608', level = 1, unique = true} i = i + 1 end -- �������� 515
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8041', level = 1, unique = true} i = i + 1 end -- ������ ���� ������ 625
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5040', level = 1, unique = true} i = i + 1 end -- ������ 590
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8174', level = 1, unique = true} i = i + 1 end -- ������� ������� 1400
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7624', level = 1, unique = true} i = i + 1 end -- ������������ 1900
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8306', level = 1, unique = true} i = i + 1 end -- ��������� 525
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7617', level = 1, unique = true} i = i + 1 end -- ���� ������ 1070
+    unitsMercenaries[i] = {id = 'g001uu8284', level = 1, unique = true} i = i + 1 -- Прядильщик 
+    unitsMercenaries[i] = {id = 'g000uu8045', level = 1, unique = true} i = i + 1 -- Траппер
+    unitsMercenaries[i] = {id = 'g000uu8247', level = 1, unique = true} i = i + 1 -- Разоритель
+    unitsMercenaries[i] = {id = 'g001uu7550', level = 1, unique = true} i = i + 1 -- Айтвар
+    unitsMercenaries[i] = {id = 'g001uu7546', level = 1, unique = true} i = i + 1 -- Окр-крушитель
+    unitsMercenaries[i] = {id = 'g000uu5011', level = 1, unique = true} i = i + 1 -- Кентавр-фалангист
+    unitsMercenaries[i] = {id = 'g000uu5028', level = 1, unique = true} i = i + 1 -- Тритон
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8218', level = 1, unique = true} i = i + 1 end -- Волхв
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7610', level = 1, unique = true} i = i + 1 end -- Ледяной ходок
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7609', level = 1, unique = true} i = i + 1 end -- Квартирмейстер
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8283', level = 1, unique = true} i = i + 1 end -- Каменный ткач
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu6106', level = 1, unique = true} i = i + 1 end -- Принцесса гномов
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5012', level = 1, unique = true} i = i + 1 end -- Окр-Багатур
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7608', level = 1, unique = true} i = i + 1 end -- Каменщик
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8041', level = 1, unique = true} i = i + 1 end -- Тёмный Эльф-мясник
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5040', level = 1, unique = true} i = i + 1 end -- Варвар
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8174', level = 1, unique = true} i = i + 1 end -- Вестник распада
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7624', level = 1, unique = true} i = i + 1 end -- Неприкаянная
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8306', level = 1, unique = true} i = i + 1 end -- Экзекутор
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7617', level = 1, unique = true} i = i + 1 end -- Тень культа
     return {
         units = unitsMercenaries,
         guard = getGuard
@@ -1118,13 +1258,13 @@ function getMercenariesright(getGuard, playerRace, playerRace2, playerRace3, pla
         end
     end
     if hasHuman then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0001', level = 1, unique = true} i = i + 1 end -- ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu5001', level = 1, unique = true} i = i + 1 end -- ���� ���������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7561', level = 1, unique = true} i = i + 1 end -- �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8311', level = 1, unique = true} i = i + 1 end -- �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0005', level = 1, unique = true} i = i + 1 end -- ����������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0010', level = 1, unique = true} i = i + 1 end -- ���
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu5003', level = 1, unique = true} i = i + 1 end -- ���������
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0001', level = 1, unique = true} i = i + 1 end -- Сквайр
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu5001', level = 1, unique = true} i = i + 1 end -- Боец ополчения
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7561', level = 1, unique = true} i = i + 1 end -- Егерь
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8311', level = 1, unique = true} i = i + 1 end -- Ардет
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0005', level = 1, unique = true} i = i + 1 end -- Инквизитор
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0010', level = 1, unique = true} i = i + 1 end -- Маг
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu5003', level = 1, unique = true} i = i + 1 end -- Ревнитель
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Dwarf then
@@ -1133,12 +1273,12 @@ function getMercenariesright(getGuard, playerRace, playerRace2, playerRace3, pla
         end
     end
     if hasDwarf then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0036', level = 1, unique = true} i = i + 1 end -- ����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0027', level = 1, unique = true} i = i + 1 end -- ����������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0030', level = 1, unique = true} i = i + 1 end -- ������ �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0038', level = 1, unique = true} i = i + 1 end -- �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0041', level = 1, unique = true} i = i + 1 end -- �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g006uu1128', level = 1, unique = true} i = i + 1 end -- ������ ����
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0036', level = 1, unique = true} i = i + 1 end -- Гном
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0027', level = 1, unique = true} i = i + 1 end -- Арбалетчик
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0030', level = 1, unique = true} i = i + 1 end -- Горный Великан
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0038', level = 1, unique = true} i = i + 1 end -- Ветеран
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0041', level = 1, unique = true} i = i + 1 end -- Горец
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g006uu1128', level = 1, unique = true} i = i + 1 end -- Мастер печи
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Heretic then
@@ -1147,13 +1287,13 @@ function getMercenariesright(getGuard, playerRace, playerRace2, playerRace3, pla
         end
     end
     if hasHeretic then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0052', level = 1, unique = true} i = i + 1 end -- ���������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7572', level = 1, unique = true} i = i + 1 end -- ���������� ��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0058', level = 1, unique = true} i = i + 1 end -- �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0056', level = 1, unique = true} i = i + 1 end -- ��������� ��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0064', level = 1, unique = true} i = i + 1 end -- ���������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2003', level = 1, unique = true} i = i + 1 end -- ��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0054', level = 1, unique = true} i = i + 1 end -- ������ �������
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0052', level = 1, unique = true} i = i + 1 end -- Одержимый
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7572', level = 1, unique = true} i = i + 1 end -- Апатитовая горгулья
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0058', level = 1, unique = true} i = i + 1 end -- Демон
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0056', level = 1, unique = true} i = i + 1 end -- Мраморная гаргулья
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0064', level = 1, unique = true} i = i + 1 end -- Демонолог
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2003', level = 1, unique = true} i = i + 1 end -- Мучитель
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0054', level = 1, unique = true} i = i + 1 end -- Чёрный паладин
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Undead then
@@ -1162,14 +1302,14 @@ function getMercenariesright(getGuard, playerRace, playerRace2, playerRace3, pla
         end
     end
     if hasUndead then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0086', level = 1, unique = true} i = i + 1 end -- �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0092', level = 1, unique = true} i = i + 1 end -- ���������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0094', level = 1, unique = true} i = i + 1 end -- ������ ����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0085', level = 1, unique = true} i = i + 1 end -- ���� ���
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0091', level = 1, unique = true} i = i + 1 end -- ���� ����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0082', level = 1, unique = true} i = i + 1 end -- ���������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu5012', level = 1, unique = true} i = i + 1 end -- ���-�����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0088', level = 1, unique = true} i = i + 1 end -- ������ ����
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0086', level = 1, unique = true} i = i + 1 end -- Мертвец
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0092', level = 1, unique = true} i = i + 1 end -- Оборотень
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0094', level = 1, unique = true} i = i + 1 end -- Дракон Рока
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0085', level = 1, unique = true} i = i + 1 end -- Злой дух
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0091', level = 1, unique = true} i = i + 1 end -- Лорд Тьмы
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0082', level = 1, unique = true} i = i + 1 end -- Некромант
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu5012', level = 1, unique = true} i = i + 1 end -- Окр-палач
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0088', level = 1, unique = true} i = i + 1 end -- Скелет-воин 
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Elf then
@@ -1178,36 +1318,36 @@ function getMercenariesright(getGuard, playerRace, playerRace2, playerRace3, pla
         end
     end
     if hasElf then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8014', level = 1, unique = true} i = i + 1 end -- �������-��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8015', level = 1, unique = true} i = i + 1 end -- �������-������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8030', level = 1, unique = true} i = i + 1 end -- ������� �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8017', level = 1, unique = true} i = i + 1 end -- �������-������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8019', level = 1, unique = true} i = i + 1 end -- �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8022', level = 1, unique = true} i = i + 1 end -- ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8026', level = 1, unique = true} i = i + 1 end -- �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8021', level = 1, unique = true} i = i + 1 end -- ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2012', level = 1, unique = true} i = i + 1 end -- �������-�������
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8014', level = 1, unique = true} i = i + 1 end -- Контавр-копейщик
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8015', level = 1, unique = true} i = i + 1 end -- Кентавр-латник
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8030', level = 1, unique = true} i = i + 1 end -- Владыка небес
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8017', level = 1, unique = true} i = i + 1 end -- Кентаврь-дикарь
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8019', level = 1, unique = true} i = i + 1 end -- Охотник
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8022', level = 1, unique = true} i = i + 1 end -- Сторож
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8026', level = 1, unique = true} i = i + 1 end -- Чанелер
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8021', level = 1, unique = true} i = i + 1 end -- Бандит
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2012', level = 1, unique = true} i = i + 1 end -- Кентавр Стрелок
     end
-    unitsMercenaries[i] = {id = 'g001uu8282', level = 1, unique = true} i = i + 1 -- �������� ���� 890
-    unitsMercenaries[i] = {id = 'g000uu8045', level = 1, unique = true} i = i + 1 -- ������� 1070
-    unitsMercenaries[i] = {id = 'g000uu8247', level = 1, unique = true} i = i + 1 -- ���������� 725
-    unitsMercenaries[i] = {id = 'g001uu7550', level = 1, unique = true} i = i + 1 -- ������ 410
-    unitsMercenaries[i] = {id = 'g001uu7546', level = 1, unique = true} i = i + 1 -- ���-��������� 825
-    unitsMercenaries[i] = {id = 'g000uu5011', level = 1, unique = true} i = i + 1 -- �������-��������� 490
-    unitsMercenaries[i] = {id = 'g000uu5028', level = 1, unique = true} i = i + 1 -- ������ 350
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7604', level = 1, unique = true} i = i + 1 end -- �������� ����� 525
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7613', level = 1, unique = true} i = i + 1 end -- ��������� 1700
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8151', level = 1, unique = true} i = i + 1 end -- ����� 1215 
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7612', level = 1, unique = true} i = i + 1 end -- ����������� ���������� 490
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7560', level = 1, unique = true} i = i + 1 end -- �������� 1230
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5032', level = 1, unique = true} i = i + 1 end -- ����� �������� 1400
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7594', level = 1, unique = true} i = i + 1 end -- ����� 1320
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu0023', level = 1, unique = true} i = i + 1 end -- ��������� 1650
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5012', level = 1, unique = true} i = i + 1 end -- ��� ������� 750
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7588', level = 1, unique = true} i = i + 1 end -- ���������� 725
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5024', level = 1, unique = true} i = i + 1 end -- ����-���� 590
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8276', level = 1, unique = true} i = i + 1 end -- ������������� 725
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8277', level = 1, unique = true} i = i + 1 end -- ���� �����
+    unitsMercenaries[i] = {id = 'g001uu8282', level = 1, unique = true} i = i + 1 -- Тенистый паук
+    unitsMercenaries[i] = {id = 'g000uu8045', level = 1, unique = true} i = i + 1 -- Траппер
+    unitsMercenaries[i] = {id = 'g000uu8247', level = 1, unique = true} i = i + 1 -- Разоритель
+    unitsMercenaries[i] = {id = 'g001uu7550', level = 1, unique = true} i = i + 1 -- Айтвар
+    unitsMercenaries[i] = {id = 'g001uu7546', level = 1, unique = true} i = i + 1 -- Окр-крушитель
+    unitsMercenaries[i] = {id = 'g000uu5011', level = 1, unique = true} i = i + 1 -- Кентавр-фалангист
+    unitsMercenaries[i] = {id = 'g000uu5028', level = 1, unique = true} i = i + 1 -- Тритон
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7604', level = 1, unique = true} i = i + 1 end -- Незрячий страж
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7613', level = 1, unique = true} i = i + 1 end -- Огнеборец
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8151', level = 1, unique = true} i = i + 1 end -- Фурия
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7612', level = 1, unique = true} i = i + 1 end -- Королевский Арбалетчик
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7560', level = 1, unique = true} i = i + 1 end -- Каратель
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5032', level = 1, unique = true} i = i + 1 end -- Вождь Варваров
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7594', level = 1, unique = true} i = i + 1 end -- Инеит
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g003uu0023', level = 1, unique = true} i = i + 1 end -- Предатель
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5012', level = 1, unique = true} i = i + 1 end -- Орк-багатур
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7588', level = 1, unique = true} i = i + 1 end -- Отлученный
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5024', level = 1, unique = true} i = i + 1 end -- Ящер-воин
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8276', level = 1, unique = true} i = i + 1 end -- Последователь
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8277', level = 1, unique = true} i = i + 1 end -- Уста богов
     return {
         units = unitsMercenaries,
         guard = getGuard
@@ -1230,17 +1370,17 @@ function getMerC(getGuard, playerRace, playerRace2, playerRace3, playerRace4)
         end
     end
     if not hasHuman then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0157', level = 1, unique = true} i = i + 1 end -- ������� ����������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0014', level = 1, unique = true} i = i + 1 end -- �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2010', level = 1, unique = true} i = i + 1 end -- ����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0152', level = 1, unique = true} i = i + 1  -- ����� ���
-        else unitsMercenaries[i] = {id = 'g001uu7582', level = 1, unique = true} i = i + 1 end -- ��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu9000', level = 1, unique = true} i = i + 1  -- ��������
-        else unitsMercenaries[i] = {id = 'g001uu8312', level = 1, unique = true} i = i + 1 end -- �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8313', level = 1, unique = true} i = i + 1  -- ��������
-        else unitsMercenaries[i] = {id = 'g003uu8050', level = 1, unique = true} i = i + 1 end -- ��������� ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0155', level = 1, unique = true} i = i + 1  -- ������ ������
-        else unitsMercenaries[i] = {id = 'g000uu0156', level = 1, unique = true} i = i + 1 end -- ��������
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0157', level = 1, unique = true} i = i + 1 end -- Великий Инквизитор
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0014', level = 1, unique = true} i = i + 1 end -- Ангел
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2010', level = 1, unique = true} i = i + 1 end -- Кара императора
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0152', level = 1, unique = true} i = i + 1  -- Белый маг
+        else unitsMercenaries[i] = {id = 'g001uu7582', level = 1, unique = true} i = i + 1 end -- Криомант
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu9000', level = 1, unique = true} i = i + 1  -- Юстициар
+        else unitsMercenaries[i] = {id = 'g001uu8312', level = 1, unique = true} i = i + 1 end -- Игнар
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8313', level = 1, unique = true} i = i + 1  -- Кастелян
+        else unitsMercenaries[i] = {id = 'g003uu8050', level = 1, unique = true} i = i + 1 end -- Хранитель Ордена
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0155', level = 1, unique = true} i = i + 1  -- Мастер Клинка
+        else unitsMercenaries[i] = {id = 'g000uu0156', level = 1, unique = true} i = i + 1 end -- Палладин
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Dwarf then
@@ -1249,13 +1389,13 @@ function getMerC(getGuard, playerRace, playerRace2, playerRace3, playerRace4)
         end
     end
     if not hasDwarf then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2001', level = 1, unique = true} i = i + 1 end -- ��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2011', level = 1, unique = true} i = i + 1 end -- ��������� ���
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2020', level = 1, unique = true} i = i + 1 end -- �������� ����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8243', level = 1, unique = true} i = i + 1 end -- ���� �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0165', level = 1, unique = true} i = i + 1  -- ������
-        else unitsMercenaries[i] = {id = 'g000uu0039', level = 1, unique = true} i = i + 1 end -- ���
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0158', level = 1, unique = true} i = i + 1 end -- ���������� ������
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2001', level = 1, unique = true} i = i + 1 end -- Гримтурс
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2011', level = 1, unique = true} i = i + 1 end -- Хранитель рун
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2020', level = 1, unique = true} i = i + 1 end -- Метатель огня
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8243', level = 1, unique = true} i = i + 1 end -- Жрец Имира
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0165', level = 1, unique = true} i = i + 1  -- Конунг
+        else unitsMercenaries[i] = {id = 'g000uu0039', level = 1, unique = true} i = i + 1 end -- Ярл
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0158', level = 1, unique = true} i = i + 1 end -- Наместник Вотана
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Heretic then
@@ -1264,14 +1404,14 @@ function getMerC(getGuard, playerRace, playerRace2, playerRace3, playerRace4)
         end
     end
     if not hasHeretic then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2004', level = 1, unique = true} i = i + 1 end -- ���������� ���
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8194', level = 1, unique = true} i = i + 1 end -- �������� �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0169', level = 1, unique = true} i = i + 1 end -- �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0168', level = 1, unique = true} i = i + 1 end -- ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8236', level = 1, unique = true} i = i + 1  -- ��������
-        else unitsMercenaries[i] = {id = 'g000uu0172', level = 1, unique = true} i = i + 1 end -- ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0166', level = 1, unique = true} i = i + 1  -- �����������
-        else unitsMercenaries[i] = {id = 'g000uu8254', level = 1, unique = true} i = i + 1 end -- ������������ 
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu2004', level = 1, unique = true} i = i + 1 end -- Истязатель душ
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8194', level = 1, unique = true} i = i + 1 end -- Багряный Ангел
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0169', level = 1, unique = true} i = i + 1 end -- Владыка
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0168', level = 1, unique = true} i = i + 1 end -- Тиамат
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8236', level = 1, unique = true} i = i + 1  -- Баррантор
+        else unitsMercenaries[i] = {id = 'g000uu0172', level = 1, unique = true} i = i + 1 end -- Модеус
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0166', level = 1, unique = true} i = i + 1  -- Возвышенный
+        else unitsMercenaries[i] = {id = 'g000uu8254', level = 1, unique = true} i = i + 1 end -- Искоренитель
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Undead then
@@ -1280,15 +1420,15 @@ function getMerC(getGuard, playerRace, playerRace2, playerRace3, playerRace4)
         end
     end
     if not hasUndead then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8155', level = 1, unique = true} i = i + 1 end -- ���� ����������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8314', level = 1, unique = true} i = i + 1 end -- �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0180', level = 1, unique = true} i = i + 1 end -- ����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0176', level = 1, unique = true} i = i + 1  -- �������
-        else unitsMercenaries[i] = {id = 'g000uu0175', level = 1, unique = true} i = i + 1 end -- ��������� ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0177', level = 1, unique = true} i = i + 1  -- ��������
-        else unitsMercenaries[i] = {id = 'g001uu8239', level = 1, unique = true} i = i + 1 end -- �����
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7540', level = 1, unique = true} i = i + 1  -- ����� �������� �����
-        else unitsMercenaries[i] = {id = 'g003uu5014', level = 1, unique = true} i = i + 1 end -- ��� �������� �����
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8155', level = 1, unique = true} i = i + 1 end -- Змий разложения
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8314', level = 1, unique = true} i = i + 1 end -- Клеврет смерти
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0180', level = 1, unique = true} i = i + 1 end -- Вирм
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0176', level = 1, unique = true} i = i + 1  -- Архилич
+        else unitsMercenaries[i] = {id = 'g000uu0175', level = 1, unique = true} i = i + 1 end --  Верховный вампир
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0177', level = 1, unique = true} i = i + 1  -- Смерть 
+        else unitsMercenaries[i] = {id = 'g001uu8239', level = 1, unique = true} i = i + 1 end -- Драуг
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7540', level = 1, unique = true} i = i + 1  -- Каган Каменной пасти
+        else unitsMercenaries[i] = {id = 'g003uu5014', level = 1, unique = true} i = i + 1 end -- Хан Каменной пасти
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Elf then
@@ -1297,40 +1437,40 @@ function getMerC(getGuard, playerRace, playerRace2, playerRace3, playerRace4)
         end
     end
     if not hasElf then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7578', level = 1, unique = true} i = i + 1 end -- ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8258', level = 1, unique = true} i = i + 1 end -- ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8233', level = 1, unique = true} i = i + 1 end -- ��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8052', level = 1, unique = true} i = i + 1 end -- ������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8020', level = 1, unique = true} i = i + 1 end -- �������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8212', level = 1, unique = true} i = i + 1 end -- �����������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7579', level = 1, unique = true} i = i + 1 end -- �������-��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8024', level = 1, unique = true} i = i + 1  -- �������
-        else unitsMercenaries[i] = {id = 'g000uu8023', level = 1, unique = true} i = i + 1 end -- ��������
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8027', level = 1, unique = true} i = i + 1  -- ������
-        else unitsMercenaries[i] = {id = 'g000uu8028', level = 1, unique = true} i = i + 1 end -- �����
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7578', level = 1, unique = true} i = i + 1 end -- Кераст
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8258', level = 1, unique = true} i = i + 1 end -- Консул
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8233', level = 1, unique = true} i = i + 1 end -- Кокильяр
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8052', level = 1, unique = true} i = i + 1 end -- Мародёр
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8020', level = 1, unique = true} i = i + 1 end -- Стингер
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8212', level = 1, unique = true} i = i + 1 end -- Прародитель
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7579', level = 1, unique = true} i = i + 1 end -- Кентавр-гвардеец
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8024', level = 1, unique = true} i = i + 1  --
+        else unitsMercenaries[i] = {id = 'g000uu8023', level = 1, unique = true} i = i + 1 end -- Стражник
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8027', level = 1, unique = true} i = i + 1  -- Архонт
+        else unitsMercenaries[i] = {id = 'g000uu8028', level = 1, unique = true} i = i + 1 end -- Тиург
     end
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8237', level = 1, unique = true} i = i + 1 end -- ����������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8153', level = 1, unique = true} i = i + 1 end -- ����
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8260', level = 1, unique = true} i = i + 1 end -- ����������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5020', level = 1, unique = true} i = i + 1 end -- ����� ������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu6115', level = 1, unique = true} i = i + 1 end -- ������ ������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu6117', level = 1, unique = true} i = i + 1 end -- �������� ����
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5014', level = 1, unique = true} i = i + 1 end -- ��� ����� 3000
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8197', level = 1, unique = true} i = i + 1 end -- ����� ������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7566', level = 1, unique = true} i = i + 1 end -- ����������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5008', level = 1, unique = true} i = i + 1 end -- ���������� ������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8278', level = 1, unique = true} i = i + 1 end -- ������������ �����
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5023', level = 1, unique = true} i = i + 1 end -- ������ ������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7600', level = 1, unique = true} i = i + 1 end -- ����� ���������� 3400
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8255', level = 1, unique = true} i = i + 1 end -- ����-����
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5019', level = 1, unique = true} i = i + 1 end -- ������� ������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8231', level = 1, unique = true} i = i + 1 end -- �������������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8269', level = 1, unique = true} i = i + 1 end -- �������� ������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7589', level = 1, unique = true} i = i + 1 end -- ������������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8244', level = 1, unique = true} i = i + 1 end -- ���������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5010', level = 1, unique = true} i = i + 1 end -- �������� ��������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7567', level = 1, unique = true} i = i + 1 end -- ����������
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5021', level = 1, unique = true} i = i + 1 end -- ����� ������
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8237', level = 1, unique = true} i = i + 1 end -- первородная сущность
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8153', level = 1, unique = true} i = i + 1 end -- жнец
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8260', level = 1, unique = true} i = i + 1 end -- Искуситель
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5020', level = 1, unique = true} i = i + 1 end -- Белый дракон
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu6115', level = 1, unique = true} i = i + 1 end -- Король гномов
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu6117', level = 1, unique = true} i = i + 1 end -- Костяной лорд
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5014', level = 1, unique = true} i = i + 1 end -- Хан Орков
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8197', level = 1, unique = true} i = i + 1 end -- Жёлтый дракон
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7566', level = 1, unique = true} i = i + 1 end -- Первородная сущность
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5008', level = 1, unique = true} i = i + 1 end -- Повелитель Эльфов
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8278', level = 1, unique = true} i = i + 1 end -- Божественная длань
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5023', level = 1, unique = true} i = i + 1 end -- Зелёный дракон
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7600', level = 1, unique = true} i = i + 1 end -- Длань Инквизиции
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8255', level = 1, unique = true} i = i + 1 end -- Эльф-тень
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5019', level = 1, unique = true} i = i + 1 end -- Красный дракон
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8231', level = 1, unique = true} i = i + 1 end -- Катафрактарий
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8269', level = 1, unique = true} i = i + 1 end -- Кровавый дракон
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7589', level = 1, unique = true} i = i + 1 end -- Осквернитель
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8244', level = 1, unique = true} i = i + 1 end -- Отступник
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5010', level = 1, unique = true} i = i + 1 end -- Облачная погибель
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7567', level = 1, unique = true} i = i + 1 end -- Первородная сущность
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5021', level = 1, unique = true} i = i + 1 end -- Синий дракон
     return {
         units = unitsMercenaries,
         guard = getGuard
@@ -1345,9 +1485,9 @@ function getReward(Type, Zone)
     local LowElexir = {'g000ig0014','g000ig0008', 'g000ig0011', 'g000ig0002', 'g001ig0560', 'g001ig0547', 'g001ig0490', 'g002ig0005'}
     local MediumElexir = {'g000ig0009', 'g000ig0012', 'g000ig0015', 'g001ig0491', 'g001ig0127', 'g001ig0562', 'g000ig0003', 'g002ig0008'}
     local HighElexir = {'g000ig0020', 'g000ig0019', 'g000ig0017', 'g001ig0126', 'g002ig0006', 'g002ig0007', 'g001ig0355', 'g001ig0128'}
-    local LowPermanent = {'g001ig0533', 'g001ig0315', 'g001ig0309', 'g001ig0313', 'g001ig0006', 'g001ig0130', 'g001ig0311', 'g001ig0307', 'g001ig0083'}
-    local MediumPermanent = {'g001ig0317', 'g001ig0516', 'g001ig0519', 'g000ig0010', 'g000ig0016', 'g000ig0013', 'g000ig0004', 'g001ig0548', 'g001ig0534'}
-    local HighPermanent = {'g001ig0518', 'g001ig0312', 'g001ig0308', 'g001ig0316', 'g001ig0310', 'g001ig0513', 'g001ig0318', 'g001ig0506'} -- g001ig0376 30% regena
+    local LowPermanent = {'g001ig0533', 'g001ig0315', 'g001ig0309', 'g001ig0313', 'g001ig0130', 'g001ig0311', 'g001ig0307', 'g001ig0083'} -- g001ig0006 -50% opita
+    local MediumPermanent = {'g001ig0317', 'g001ig0516', 'g000ig0010', 'g000ig0016', 'g000ig0013', 'g000ig0004', 'g001ig0548', 'g001ig0534'} -- g001ig0519 - 10 soprotivleniya voram allways,
+    local HighPermanent = {'g001ig0518', 'g001ig0312', 'g001ig0308', 'g001ig0316', 'g001ig0310', 'g001ig0318', 'g001ig0506'} -- g001ig0376 30% regena, g001ig0513 - 5 muvov
     local AuraPermanentLow = {'g001ig0026', 'g001ig0027', 'g001ig0563', 'g001ig0028', 'g001ig0034', 'g001ig0029', 'g001ig0030'}
     local AuraPermanentHigh = {'g001ig0031', 'g001ig0564', 'g001ig0024', 'g001ig0021', 'g001ig0023',  'g001ig0022', 'g001ig0025', 'g001ig0019'}
     local ElexirPermanentDot = {'g001ig0332', 'g001ig0342', 'g001ig0346', 'g001ig0330', 'g001ig0328', 'g001ig0352', 'g001ig0338', 'g001ig0340', 'g001ig0336', 'g001ig0344', 'g001ig0354', 'g001ig0348'}
@@ -1595,7 +1735,7 @@ function getReward(Type, Zone)
     elseif Type == 'guardtownt2' and Zone == 'zonesmeja' then
         table.insert(rewardItems, {id = 'g001ig0378', min = 1, max = 1})
         table.insert(rewardItems, {id = 'g000ig0006', min = 1, max = 1})
-        table.insert(rewardItems, {id = 'g001ig0530', min = 1, max = 1}) -- банка на талики
+        table.insert(rewardItems, {id = 'g001ig0530', min = 1, max = 1}) -- Р В±Р В°Р Р…Р С”Р В° Р Р…Р В° РЎвЂљР В°Р В»Р С‘Р С”Р С‘
         table.insert(rewardItems, {id = LowElexir[math.random(#LowElexir)], min = 1, max = 1})
         table.insert(rewardItems, {id = ElexirProtection[math.random(#ElexirProtection)], min = 1, max = 1})
 
@@ -1610,26 +1750,31 @@ function getReward(Type, Zone)
         table.insert(rewardItems, {id = 'g001ig0378', min = 4, max = 4})
         table.insert(rewardItems, {id = 'g000ig0006', min = 4, max = 4})
         table.insert(rewardItems, {id = 'g000ig0018', min = 1, max = 1})
+        -- table.insert(rewardItems, {id = ArtT1[math.random(#ArtT1)], min = 1, max = 1})
         for i = 1,2 do
             local a = math.random(1, #ArtT1)
             table.insert(rewardItems, {id = ArtT1[a], min = 1, max = 1})
             table.remove(ArtT1, a)
         end
+        -- table.insert(rewardItems, {id = ArtT2[math.random(#ArtT2)], min = 1, max = 1})
         for i = 1,2 do
             a = math.random(1, #ArtT2)
             table.insert(rewardItems, {id = ArtT2[a], min = 1, max = 1})
             table.remove(ArtT2, a)
         end
+        -- table.insert(rewardItems, {id = BannerT1[math.random(#BannerT1)], min = 1, max = 1 })
         for i = 1,2 do
             b = math.random(1, #BannerT1)
             table.insert(rewardItems, {id = BannerT1[b], min = 1, max = 1})
             table.remove(BannerT1, b)
         end
+        -- table.insert(rewardItems, {id = BannerT2[math.random(#BannerT2)], min = 1, max = 1 })
         for i = 1,2 do
             b = math.random(1, #BannerT2)
             table.insert(rewardItems, {id = BannerT2[b], min = 1, max = 1})
             table.remove(BannerT2, b)
         end
+        -- table.insert(rewardItems, {id = TravelT2[math.random(#TravelT2)], min = 1, max = 1 })
         for i = 1,2 do
             t = math.random(1, #TravelT1)
             table.insert(rewardItems, {id = TravelT1[t], min = 1, max = 1})
@@ -1642,6 +1787,7 @@ function getReward(Type, Zone)
         end
         table.insert(rewardItems, {id = JewelT1[math.random(#JewelT1)], min = 1, max = 1})
         
+        -- table.insert(rewardItems, {id = JewelT2[math.random(#JewelT2)], min = 1, max = 1})
         for i = 1,3 do
             j = math.random(1, #JewelT2)
             table.insert(rewardItems, {id = JewelT2[j], min = 1, max = 1})
@@ -1797,21 +1943,25 @@ function getReward(Type, Zone)
         table.insert(rewardItems, {id = 'g001ig0378', min = 4, max = 4})
         table.insert(rewardItems, {id = 'g000ig0006', min = 4, max = 4})
         table.insert(rewardItems, {id = 'g000ig0018', min = 3, max = 3})
+        -- table.insert(rewardItems, {id = ArtT3[math.random(#ArtT3)], min = 1, max = 1})
         for i = 1,4 do
             a = math.random(1, #ArtT3)
             table.insert(rewardItems, {id = ArtT3[a], min = 1, max = 1})
             table.remove(ArtT3, a)
         end
+        -- table.insert(rewardItems, {id = BannerT3[math.random(#BannerT3)], min = 1, max = 1 })
         for i = 1,4 do
             b = math.random(1, #BannerT3)
             table.insert(rewardItems, {id = BannerT3[b], min = 1, max = 1})
             table.remove(BannerT3, b)
         end
+        -- table.insert(rewardItems, {id = TravelT3[math.random(#TravelT3)], min = 1, max = 1 })
         for i = 1,2 do
             t = math.random(1, #TravelT3)
             table.insert(rewardItems, {id = TravelT3[t], min = 1, max = 1})
             table.remove(TravelT3, t)
         end
+        -- table.insert(rewardItems, {id = JewelT3[math.random(#JewelT3)], min = 1, max = 1})
         for i = 1,3 do
             j = math.random(1, #JewelT3)
             table.insert(rewardItems, {id = JewelT3[j], min = 1, max = 1})
@@ -1966,46 +2116,55 @@ function getReward(Type, Zone)
         table.insert(rewardItems, {id = 'g001ig0378', min = 4, max = 4})
         table.insert(rewardItems, {id = 'g000ig0006', min = 4, max = 4})
         table.insert(rewardItems, {id = 'g000ig0018', min = 2, max = 2})
+        -- table.insert(rewardItems, {id = ArtT5[math.random(#ArtT5)], min = 1, max = 1})
         for i = 1,3 do
             a = math.random(1, #ArtT5)
             table.insert(rewardItems, {id = ArtT5[a], min = 1, max = 1})
             table.remove(ArtT3, a)
         end
+        -- table.insert(rewardItems, {id = ArtT4[math.random(#ArtT4)], min = 1, max = 1})
         for i = 1,3 do
             a = math.random(1, #ArtT4)
             table.insert(rewardItems, {id = ArtT4[a], min = 1, max = 1})
             table.remove(ArtT4, a)
         end
+        -- table.insert(rewardItems, {id = ArtT3[math.random(#ArtT3)], min = 1, max = 1})
         for i = 1,2 do
             a = math.random(1, #ArtT3)
             table.insert(rewardItems, {id = ArtT3[a], min = 1, max = 1})
             table.remove(ArtT3, a)
         end
+        -- table.insert(rewardItems, {id = BannerT4[math.random(#BannerT4)], min = 1, max = 1})
         for i = 1,3 do
             b = math.random(1, #BannerT4)
             table.insert(rewardItems, {id = BannerT4[b], min = 1, max = 1})
             table.remove(BannerT4, b)
         end
+        -- table.insert(rewardItems, {id = BannerT3[math.random(#BannerT3)], min = 1, max = 1})
         for i = 1,2 do
             b = math.random(1, #BannerT3)
             table.insert(rewardItems, {id = BannerT3[b], min = 1, max = 1})
             table.remove(BannerT3, b)
         end
+        -- table.insert(rewardItems, {id = TravelT3[math.random(#TravelT3)], min = 1, max = 1})
         for i = 1,2 do
             t = math.random(1, #TravelT3)
             table.insert(rewardItems, {id = TravelT3[t], min = 1, max = 1})
             table.remove(TravelT3, t)
         end
+        -- table.insert(rewardItems, {id = TravelT2[math.random(#TravelT2)], min = 1, max = 1})
         for i = 1,1 do
             t = math.random(1, #TravelT2)
             table.insert(rewardItems, {id = TravelT2[a], min = 1, max = 1})
             table.remove(TravelT2, t)
         end
+        -- table.insert(rewardItems, {id = JewelT4[math.random(#JewelT4)], min = 1, max = 1})
         for i = 1,2 do
             j = math.random(1, #JewelT4)
             table.insert(rewardItems, {id = JewelT4[j], min = 1, max = 1})
             table.remove(JewelT4, j)
         end
+        -- table.insert(rewardItems, {id = JewelT3[math.random(#JewelT3)], min = 1, max = 1})
         for i = 1,2 do
             j = math.random(1, #JewelT3)
             table.insert(rewardItems, {id = JewelT3[j], min = 1, max = 1})
@@ -2133,7 +2292,7 @@ function getReward(Type, Zone)
         end
         return rewardItems
     end
----- Описание зон ----
+
 function getStartingZone(zoneId, playerRace, playerRaceX, zoneSize)
     local startelexirprotection = {'g000ig0022', 'g000ig0021', 'g000ig0023', 'g000ig0024', 'g001ig0125', 'g001ig0036'}
     local startelexirdotprotection = {'g001ig0329', 'g001ig0351', 'g001ig0343', 'g001ig0341'}
@@ -2417,7 +2576,7 @@ function getZones(races)
     local ZoneLRCenter = 14
     local startingZone = 12
     local ZoneCentersize = 24
-    local ZoneRM = 3
+    local ZoneRMsize = 3
 
     local zones = { }
 
@@ -2425,13 +2584,13 @@ function getZones(races)
     zones[2] = getZoneLeftCenter(ZoneLeftCenterID, ZoneLRCenter)
     zones[3] = getZoneLeftP2(ZoneLeftP2ID, races[2], races[4], ZonePSize)
 	zones[4] = getStartingZone(StartingZoneP2ID, races[2], races[4], startingZone)
-    zones[5] = getZoneRM(ZoneRMid, ZoneRM)
+    zones[5] = getZoneRM(ZoneRMid, ZoneRMsize)
     zones[6] = getStartingZone(StartingZoneP4ID, races[4], races[2], startingZone)
 	zones[7] = getZoneRightP4(ZoneRightP4ID, races[4], races[2], ZonePSize)
 	zones[8] = getZoneRightCenter(ZoneRightCenterID, ZoneLRCenter)
 	zones[9] = getZoneRightP3(ZoneRightP3ID, races[3], races[1], ZonePSize)
 	zones[10] = getStartingZone(StartingZoneP3ID, races[3], races[1], startingZone)
-    zones[11] = getZoneRM2(ZoneRM2id, ZoneRM)
+    zones[11] = getZoneRM2(ZoneRM2id, ZoneRMsize)
 	zones[12] = getStartingZone(StartingZoneP1ID, races[1], races[3], startingZone)
 	zones[13] = getZoneCenter(ZoneCenterID, races[1], races[2], races[3], races[4], ZoneCentersize)
 
@@ -2441,11 +2600,11 @@ end
 function getConnections()
     return {
 
-		{from = 0, to = 1, guard = getGuard(11, getReward('guardsmeja', 'GOtoLRCenter'))},
+		{from = 0, to = 1, guard = getGO(11, getReward('guardsmeja', 'GOtoLRCenter'))},
 
-        {from = 1, to = 2, guard = getGuard(11, getReward('guardsmeja', 'GOtoLRCenter'))},
+        {from = 1, to = 2, guard = getGO(11, getReward('guardsmeja', 'GOtoLRCenter'))},
 
-        {from = 2, to = 3, guard = getGuard(10, getReward('guardResp', 'GOtosmeja'))},
+        {from = 2, to = 3, guard = getGO(10, getReward('guardResp', 'GOtosmeja'))},
 
 
         {from = 3, to = 4},
@@ -2454,13 +2613,13 @@ function getConnections()
         {from = 3, to = 5},
   
 
-        {from = 5, to = 6, guard = getGuard(10, getReward('guardResp', 'GOtosmeja'))},
+        {from = 5, to = 6, guard = getGO(10, getReward('guardResp', 'GOtosmeja'))},
 
-        {from = 6, to = 7, guard = getGuard(11, getReward('guardsmeja', 'GOtoLRCenter'))},
+        {from = 6, to = 7, guard = getGO(11, getReward('guardsmeja', 'GOtoLRCenter'))},
 
-        {from = 7, to = 8, guard = getGuard(11, getReward('guardsmeja', 'GOtoLRCenter'))},
+        {from = 7, to = 8, guard = getGO(11, getReward('guardsmeja', 'GOtoLRCenter'))},
 
-        {from = 8, to = 9, guard = getGuard(10, getReward('guardResp', 'GOtosmeja'))},
+        {from = 8, to = 9, guard = getGO(10, getReward('guardResp', 'GOtosmeja'))},
 
         {from = 9, to = 11},
      
@@ -2469,14 +2628,14 @@ function getConnections()
         {from = 10, to = 11},
     
 
-        {from = 11, to = 0, guard = getGuard(10, getReward('guardResp', 'GOtosmeja'))},
+        {from = 11, to = 0, guard = getGO(10, getReward('guardResp', 'GOtosmeja'))},
 
-        {from = 12, to = 9, guard = getGuard(12, getReward('guardResp', 'GOtoCenter'))},
-        {from = 12, to = 11, guard = getGuard(12, getReward('guardResp', 'GOtoCenter'))},
-        {from = 12, to = 1, guard = getGuard(12, getReward('guardResp', 'GOtoCenter'))},
-        {from = 12, to = 3, guard = getGuard(12, getReward('guardResp', 'GOtoCenter'))},
-        {from = 12, to = 5, guard = getGuard(12, getReward('guardResp', 'GOtoCenter'))},
-        {from = 12, to = 7, guard = getGuard(12, getReward('guardResp', 'GOtoCenter'))},
+        {from = 12, to = 9, guard = getGOrnd(12, getReward('guardResp', 'GOtoCenter'))},
+        {from = 12, to = 11, guard = getGOrnd(12, getReward('guardResp', 'GOtoCenter'))},
+        {from = 12, to = 1, guard = getGOrnd(12, getReward('guardResp', 'GOtoCenter'))},
+        {from = 12, to = 3, guard = getGOrnd(12, getReward('guardResp', 'GOtoCenter'))},
+        {from = 12, to = 5, guard = getGOrnd(12, getReward('guardResp', 'GOtoCenter'))},
+        {from = 12, to = 7, guard = getGOrnd(12, getReward('guardResp', 'GOtoCenter'))},
 
 	}
 end
@@ -2490,8 +2649,8 @@ function getTemplateContents(races)
 end
 
 template = {
-    name = 'Double Trouble 1.2r',
-    description = 'Double Trouble 1.2r by iSkromny & Nexx, sMNS2, 72x72, 4 players, 2x2 \nTimer: First day: 420, next days: 360',
+    name = 'Double Trouble 1.2',
+    description = 'Double Trouble 1.2 by iSkromny & Nexx, sMNS2, 72x72, 4 players, 2x2 \nTimer: First day: 480, next days: 360',
     minSize = 72,
     maxSize = 72,
     maxPlayers = 4,
@@ -2501,199 +2660,161 @@ template = {
     startingNativeMana = 300,
     getContents = getTemplateContents,
     forbiddenSpells = {
-        'g000ss0173', -- ������� ����
-        'g000ss0027', -- ������������
-        'g000ss0124', -- �������� �����������
-        'g000ss0146', -- ����
-        'g000ss0175', -- ������������ ��������
-        'g000ss0149', -- ���������
-        'g000ss0200', -- �����
-        'g000ss0159', -- ������
+        -- заклы
+        'g000ss0173', -- Великий ужас
+        'g000ss0027', -- Мореплавание
+        'g000ss0124', -- Отсрочка неизбежного
+        'g000ss0146', -- Создание горы
+        'g000ss0175', -- Божественная мудрость
+        'g000ss0149', -- Вампиризм
+        'g000ss0200', -- Жатва
+        'g000ss0159', -- Увечье
         'g000ss0091', -- Tempus Status
         'g000ss0053', -- Paraseus
-        'g000ss0094', -- ������ ������
-        'g000ss0099', -- ����������
-        'g000ss0087', -- ����� �����������
-        'g000ss0006', -- ���������
+        'g000ss0094', -- Псалом смерти
+        'g000ss0099', -- Опутывание
+        'g000ss0087', -- Ветер путешествий
+        'g000ss0006', -- Ускорение
     },
-
+        -- предметы
     forbiddenItems = {
-        'g000ig3007', -- ������
-        'g001ig0388', -- ����� �����
-        'g000ig3018', -- ������ ������
-        'g001ig0521', -- ����� ������������ (20 ������������� ����� ��������)
+        'g000ig3007', -- Коготь бетрезена
+        'g001ig0388', -- Посох Войны
+        'g000ig3018', -- Клинок сущего
+        'g001ig0521', -- Зелье разоблачения
     },
 
     forbiddenUnits = {
-        -- ����������� �����-������ � �� ������ �����
-        'g000uu0021', --�������
-        'g000uu8248', --�������
-        'g000uu0020', --��������
-        'g000uu0019', --������ �� ������
-        'g000uu0022', --��������
-        'g000uu0023', --���
-        'g000uu5300', --���
-        'g000uu0044', --����������� �����
-        'g000uu0045', --�������
-        'g000uu0046', --������
-        'g000uu8249', --������
-        'g000uu0047', --����������
-        'g000uu0048', --���
-        'g000uu5301', --���
-        'g000uu0070', --������
-        'g000uu0071', --��������
-        'g000uu0072', --����������
-        'g000uu8250', --����������
-        'g000uu0073', --���������
-        'g000uu0074', --���
-        'g000uu5302', --���
-        'g000uu0096', --������ ������
-        'g000uu0097', --���������
-        'g000uu8252', --���������
-        'g000uu0098', --�������� �����
-        'g000uu8253', --�������� �����
-        'g000uu0099', --������
-        'g000uu0100', --���
-        'g000uu5303', --���
-        'g000uu8251', --������
-        'g000uu8010', --������
-        'g000uu8009', --������ ����
-        'g000uu8011', --����� ����
-        'g000uu8012', --������
-        'g000uu8013', --���
-        'g000uu5304', --���
-
-        -- ����������� �����-�������
-        'g001uu0021', --�������
-        'g001uu0020', --��������
-        'g001uu0019', --������ �� ������
-        'g001uu0022', --��������
-        'g001uu0023', --���
-        'g001uu0045', --�������
-        'g001uu0044', --����������� �����
-        'g001uu0046', --������
-        'g070uu0003', --������
-        'g001uu0047', --����������
-        'g001uu0048', --���
-        'g001uu0072', --����������
-        'g070uu0004', --����������
-        'g001uu0071', --��������
-        'g001uu0070', --������
-        'g001uu0073', --���������
-        'g001uu0074', --���
-        'g001uu0098', --�������� �����
-        'g070uu0001', --���������
-        'g001uu0097', --���������
-        'g001uu0096', --������ ������
-        'g001uu0099', --������
-        'g001uu0100', --���
-        'g001uu8010', --������
-        'g070uu0002', --������
-        'g001uu8009', --������ ����
-        'g001uu8011', --����� ����
-        'g001uu8012', --������
-        'g001uu8013', --���
+        -- Фракционные герои-солдаты
+        'g001uu0021', --Архимаг
+        'g001uu0020', --Следопыт
+        'g001uu0019', --Рыцарь на Пегасе
+        'g001uu0022', --Архангел
+        'g001uu0023', --Вор
+        'g001uu0045', --Инженер
+        'g001uu0044', --Королевский страж
+        'g001uu0046', --Ученый
+        'g070uu0003', --Ученый
+        'g001uu0047', --Старейшина
+        'g001uu0048', --Вор
+        'g001uu0072', --Архидьявол
+        'g070uu0004', --Архидьявол
+        'g001uu0071', --Советник
+        'g001uu0070', --Герцог
+        'g001uu0073', --Баронесса
+        'g001uu0074', --Вор
+        'g001uu0098', --Королева личей
+        'g070uu0001', --Носферату
+        'g001uu0097', --Носферату
+        'g001uu0096', --Рыцарь Смерти
+        'g001uu0099', --Баньши
+        'g001uu0100', --Вор
+        'g001uu8010', --Дриада
+        'g070uu0002', --Дриада
+        'g001uu8009', --Вассал леса
+        'g001uu8011', --Страж леса
+        'g001uu8012', --Мудрец
+        'g001uu8013', --Вор
      
-        -- ����������� �����������-������� � ������� ���-��� �����
-        'g000uu8185', -- ������� ������
-        'g001uu7598', -- ���������
-        'g001uu8242', -- X����� �����
-        'g000uu8242', -- ������ ����� (�����)
-        'g000uu0164', -- ���������� ������
+        -- Фракционные призыватели-солдаты с большим кол-вом опыта
+        'g000uu8185', -- Магистр стихий
+        'g001uu7598', -- Теневидец
+        'g001uu8242', -- Xозяин масок
+        'g000uu8242', -- хозяин масок (лидер)
+        'g000uu0164', -- Повелитель волков
 
-        -- ����������� �������-������� � ������� ���-��� ����� � ������ �������
-        'g000uu0017', -- ��������
-        'g000uu8035', -- ��������
-        'g002uu8039', -- �������
-        'g000uu7570', -- �������
-        'g000uu0012', -- ����
-        'g000uu7569', -- �����
-        'g000uu8264', -- ������
-        'g000uu0151', -- ���������������
-        'g000uu0013', -- ���������
-        'g000uu8214', -- ���������
-        'g000uu8034', -- ��������� ����������
-        'g000uu0150', -- ��������
-        'g003uu8039', -- ����� �����
-        'g003uu8038', -- ��� ��������
-        'g000uu8235', -- ��������
-        'g000uu2002', -- ��������
-        'g003uu8037', -- ��������� �����
-        'g001uu7614', -- �������� ���
-        'g000uu0016', -- ��������
+        -- Фракционные хиллеры-солдаты с большим кол-вом опыта и просто хиллеры
+        'g000uu0017', -- Аббатиса
+        'g000uu8035', -- Вильсида
+        'g002uu8039', -- Вердант
+        'g000uu7570', -- Епископ
+        'g000uu0012', -- Жрец
+        'g000uu7569', -- Иерей
+        'g000uu8264', -- Иерарх
+        'g000uu0151', -- Прорицательница
+        'g000uu0013', -- Священник
+        'g000uu8214', -- Дриолисса
+        'g000uu8034', -- Солнечная Танцовщица
+        'g000uu0150', -- Патриарх
+        'g003uu8039', -- Древо жизни
+        'g003uu8038', -- Энт целитель
+        'g000uu8235', -- Сильфида
+        'g000uu2002', -- Целитель
+        'g003uu8037', -- Священное древо
+        'g001uu7614', -- Искатель рун
+        'g000uu0016', -- Монахиня
 
-        -- ����������� ������ � ������ �������������� 20%
-        'g000uu5236', -- ����
-        'g000uu5117', -- ������
-        'g000uu5101', -- ����������
-        'g000uu8308', -- ������� �������
-        'g000uu5130', -- ���������
-        'g000uu7556', -- ������-����
-        'g000uu7533', -- �����
-        'g000uu7510', -- ����� ��� �����
-        'g000uu7616', -- ���� ����� �����
-        'g000uu6004', -- ������� ��� �.
-        'g000uu5201', -- ������ �.
-        'g000uu7539', -- �������
-        'g000uu7592', -- ������
-        'g000uu7516', -- ��� ����� �.
-        'g000uu5262', -- ������� �.
-        'g000uu7614', -- �������� ��� �����
-        'g000uu7553', -- �������-�����
-        'g000uu7512', -- ������
+        -- нейтральные лидеры с низкой неподкупностью 20%
+        'g000uu5236', -- Гном
+        'g000uu5117', -- Гоблин
+        'g000uu5101', -- Крестьянин
+        'g000uu8308', -- Молодой триббог
+        'g000uu5130', -- Разбойник
+        'g000uu7556', -- Гоблин-жгун
+        'g000uu7533', -- Псина
+        'g000uu7510', -- Птица рух лидер
+        'g000uu7616', -- Гном упырь лидер
+        'g000uu6004', -- Толстый бес л.
+        'g000uu5201', -- Сквайр л.
+        'g000uu7539', -- Колотун
+        'g000uu7592', -- Торхот
+        'g000uu7516', -- Энт Малый л.
+        'g000uu5262', -- Сектант л.
+        'g000uu7614', -- Искатель рун лидер
+        'g000uu7553', -- Ведунья-лидер
+        'g000uu7512', -- Скелет
 
-        --��� ����������� ������� � ������� ���-��� ����� (������ � �������)
-        'g000uu8287', -- ��.������ �.
-        'g000uu8288', -- ��� �������� �.
-        'g000uu7519', -- ������� �.
-        'g000uu8215', -- ��������� �.
-        'g000uu8266', -- �������
-        'g000uu8262', -- �������� �.
-        'g000uu8289', -- ����� ����� �
-        'g000uu7521', -- �������� �.
-        'g000uu5006', -- ������� ������
-        'g000uu8222', -- ����� �. �����
-        'g000uu8218', -- �����
-        'g000uu7544', -- ��������������
-        'g000uu8213', -- ������-�����
-        'g001uu8262', -- ��������
-        'g000uu2021', -- �����������
-        'g000uu8223', -- ��������� ��������� �. �����
-        'g000uu6107', -- ������ ����-����
-        'g000uu6007', -- ������ ����-���� (�����)
-        'g000uu7619', -- ����� ������
-        'g000uu8210', -- ��������� ��� (�����)
-        'g000uu6116', -- ���������
-        'g000uu6016', -- ��������� �����   
-        'g000uu8265', -- ���� �������
-        'g000uu8033', -- ������ ����
-        'g000uu8133', -- ������ ���� (�����)
-        'g000uu8217', -- ���������� ������ �.
-        'g000uu8216', -- ���������� ������
-        'g000uu5022', -- ������ ������
-        'g000uu5122', -- ������ ������ �.
-        'g000uu6118', -- �������� ������
-        'g000uu6018', -- �������� ������ (�����)
-        'g000uu8107', -- ������� ������ (�����)
-        'g000uu6114', -- �������-����������
-        'g000uu6014', -- �������-���������� (�����)
-        'g000uu6113', -- ����������
-        'g000uu6013', -- ����������(�����)
-        'g000uu8203', -- ���������� �����
-        'g000uu8204', -- ���������� ����� (�����)
-        'g000uu8205', -- �������������� ������ 
-        'g000uu8206', -- �������������� ������ (�����)
-        'g000uu0153', -- ������ ������������
-        'g001uu8303', -- ������ �����
-        'g000uu8303', -- ������ ����� (�����)
-        'g000uu8263', -- �������������
-        'g000uu2022', -- �����
-        'g000uu7528', -- ����������� (�����)
-        'g000uu2007', -- �����������
-        'g000uu2008', -- ����� ������
-        'g000uu8318', -- ����� ������ (�����)
-        'g000uu8220', -- ����������
-
+        --Все нейтральные хиллеры с большим кол-вом опыта (лидеры и солдаты)
+        'g000uu8287', -- Св.дерево л.
+        'g000uu8288', -- Энт целитель л.
+        'g000uu7519', -- Вердант л.
+        'g000uu8215', -- Дриолисса л.
+        'g000uu8266', -- Дроттар
+        'g000uu8262', -- Знахарка л.
+        'g000uu8289', -- Древо жизни л
+        'g000uu7521', -- Целитель л.
+        'g000uu5006', -- Великий Оракул
+        'g000uu8222', -- Волхв л. бафер
+        'g000uu8218', -- Волхв
+        'g000uu7544', -- Настоятельница
+        'g000uu8213', -- Гоблин-шаман
+        'g001uu8262', -- Знахарка
+        'g000uu2021', -- Проповедник
+        'g000uu8223', -- Верховный некромант л. бафер
+        'g000uu6107', -- Темный эльф-жрец
+        'g000uu6007', -- Темный эльф-жрец (лидер)
+        'g000uu7619', -- Слуга культа
+        'g000uu8210', -- гибельный рой (лидер)
+        'g000uu6116', -- мантикора
+        'g000uu6016', -- мантикора лидер   
+        'g000uu8265', -- дева пламени
+        'g000uu8033', -- лесная дева
+        'g000uu8133', -- лесная дева (лидер)
+        'g000uu8217', -- Призрачный дракон л.
+        'g000uu8216', -- Призрачный дракон
+        'g000uu5022', -- Черный дракон
+        'g000uu5122', -- Черный дракон л.
+        'g000uu6118', -- королева эльфов
+        'g000uu6018', -- королева эльфов (лидер)
+        'g000uu8107', -- вестник мортис (лидер)
+        'g000uu6114', -- Магистр-оккультист
+        'g000uu6014', -- Магистр-оккультист (лидер)
+        'g000uu6113', -- оккультист
+        'g000uu6013', -- оккультист(лидер)
+        'g000uu8203', -- повелитель теней
+        'g000uu8204', -- повелитель теней (лидер)
+        'g000uu8205', -- повелительница стихий 
+        'g000uu8206', -- повелительница стихий (лидер)
+        'g000uu0153', -- ученик элементалист
+        'g001uu8303', -- черная вдова
+        'g000uu8303', -- черная вдова (лидер)
+        'g000uu8263', -- чернокнижница
+        'g000uu2022', -- ламия
+        'g000uu7528', -- мумификатор (лидер)
+        'g000uu2007', -- мумификатор
+        'g000uu2008', -- длань мортис
+        'g000uu8318', -- длань мортис (лидер)
+        'g000uu8220', -- карманница
 
 
         },
