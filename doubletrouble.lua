@@ -2289,6 +2289,25 @@ function getReward(Type, Zone)
     elseif Type == 'bags' and Zone == 'zonerm' then
         table.insert(rewardItems, {id = 'g001ig0378', min = 1, max = 1})
         table.insert(rewardItems, {id = 'g000ig0005', min = 1, max = 1})
+
+
+    elseif Type == 'stackrm' and Zone == 'zonerm' then
+        table.insert(rewardItems, {id = 'g000ig0005', min = 1, max = 1})
+        table.insert(rewardItems, {id = scrollT1[math.random(#scrollT1)], min = 1, max = 1})
+        table.insert(rewardItems, {id = 'g001ig0378', min = 1, max = 1})
+        table.insert(rewardItems, wtf({id = smallValuable[math.random(#smallValuable)], min = 1, max = 1}, {id = smallballmana[math.random(#smallballmana)], min = 1, max = 1}, {id = TalismanSummont1[math.random(#TalismanSummont1)], min = 1, max = 1}))
+        if dropChance(35) then
+            table.insert(rewardItems, {id = weakOrbs[math.random(#weakOrbs)], min = 1, max = 1})
+        end
+        table.insert(rewardItems, {id = 'g001ig0180', min = 1, max = 1})
+        if dropChance(35) then
+            table.insert(rewardItems, {id = TalismanT1[math.random(#TalismanT1)], min = 1, max = 1})
+        end
+        table.insert(rewardItems, {id = 'g000ig0005', min = 1, max = 1})
+        if dropChance(35) then
+            table.insert(rewardItems, {id = scrollDmgT1[math.random(#scrollDmgT1)], min = 1, max = 1})
+        end
+        table.insert(rewardItems, {id = 'g001ig0180', min = 1, max = 1})	
         end
         return rewardItems
     end
