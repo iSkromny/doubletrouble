@@ -1,5 +1,5 @@
 --- template DoubleTrouble
---- author: iSkromny
+--- 
 --- 
 --- 
 function getDiplomacyRelations(races)
@@ -2290,7 +2290,6 @@ function getReward(Type, Zone)
         table.insert(rewardItems, {id = 'g001ig0378', min = 1, max = 1})
         table.insert(rewardItems, {id = 'g000ig0005', min = 1, max = 1})
 
-
     elseif Type == 'stackrm' and Zone == 'zonerm' then
         table.insert(rewardItems, {id = 'g000ig0005', min = 1, max = 1})
         table.insert(rewardItems, {id = scrollT1[math.random(#scrollT1)], min = 1, max = 1})
@@ -2307,7 +2306,12 @@ function getReward(Type, Zone)
         if dropChance(35) then
             table.insert(rewardItems, {id = scrollDmgT1[math.random(#scrollDmgT1)], min = 1, max = 1})
         end
-        table.insert(rewardItems, {id = 'g001ig0180', min = 1, max = 1})	
+        table.insert(rewardItems, {id = 'g001ig0180', min = 1, max = 1})
+
+
+
+
+
         end
         return rewardItems
     end
