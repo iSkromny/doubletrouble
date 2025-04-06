@@ -2731,7 +2731,7 @@ function getTemplateContents(races)
 end
 
 template = {
-    name = 'Double Trouble 1.2',
+    name = 'Double Trouble 1.2a',
     description = 'Double Trouble 1.2 by iSkromny & Nexx, sMNS2, 72x72, 4 players, 2x2 \nTimer: First day: 480, next days: 360',
     minSize = 72,
     maxSize = 72,
