@@ -665,7 +665,6 @@ function getStack(tier, stackCount, itemsTable, race, modifKeyOrModifier1, modif
             table.insert(leaderModifiers, modifKeyOrModifier2)
         end
     end
-
     return {
         count = stackCount,
         subraceTypes = squad,
@@ -726,7 +725,6 @@ function getGuard(tier, itemsTable, modifKeyOrModifier, isAggressive)
     end
     return result
 end
-
 
 function guardrnd(tier, itemsTable, modifKeyOrModifier)
     local isAggressive = math.random() >= 0.7
@@ -1485,15 +1483,15 @@ function getMerC(getGuard, playerRace, playerRace2, playerRace3, playerRace4)
         end
     end
     if not hasUndead then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8155', level = 1, unique = true} i = i + 1 end -- Р—РјРёР№ СЂР°Р·Р»РѕР¶РµРЅРёСЏ
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8314', level = 1, unique = true} i = i + 1 end -- РљР»РµРІСЂРµС‚ СЃРјРµСЂС‚Рё
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0180', level = 1, unique = true} i = i + 1 end -- Р’РёСЂРј
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0176', level = 1, unique = true} i = i + 1  -- РђСЂС…РёР»РёС‡
-        else unitsMercenaries[i] = {id = 'g000uu0175', level = 1, unique = true} i = i + 1 end --  Р’РµСЂС…РѕРІРЅС‹Р№ РІР°РјРїРёСЂ
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0177', level = 1, unique = true} i = i + 1  -- РЎРјРµСЂС‚СЊ 
-        else unitsMercenaries[i] = {id = 'g001uu8239', level = 1, unique = true} i = i + 1 end -- Р”СЂР°СѓРі
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7540', level = 1, unique = true} i = i + 1  -- РљР°РіР°РЅ РљР°РјРµРЅРЅРѕР№ РїР°СЃС‚Рё
-        else unitsMercenaries[i] = {id = 'g003uu5014', level = 1, unique = true} i = i + 1 end -- РҐР°РЅ РљР°РјРµРЅРЅРѕР№ РїР°СЃС‚Рё
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8155', level = 1, unique = true} i = i + 1 end
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8314', level = 1, unique = true} i = i + 1 end
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0180', level = 1, unique = true} i = i + 1 end
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0176', level = 1, unique = true} i = i + 1
+        else unitsMercenaries[i] = {id = 'g000uu0175', level = 1, unique = true} i = i + 1 end
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu0177', level = 1, unique = true} i = i + 1
+        else unitsMercenaries[i] = {id = 'g001uu8239', level = 1, unique = true} i = i + 1 end
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7540', level = 1, unique = true} i = i + 1
+        else unitsMercenaries[i] = {id = 'g003uu5014', level = 1, unique = true} i = i + 1 end  
     end
     for _, race in ipairs(allowed_races) do
         if race == Race.Elf then
@@ -1502,40 +1500,40 @@ function getMerC(getGuard, playerRace, playerRace2, playerRace3, playerRace4)
         end
     end
     if not hasElf then
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7578', level = 1, unique = true} i = i + 1 end -- РљРµСЂР°СЃС‚
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8258', level = 1, unique = true} i = i + 1 end -- РљРѕРЅСЃСѓР»
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8233', level = 1, unique = true} i = i + 1 end -- РљРѕРєРёР»СЊСЏСЂ
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8052', level = 1, unique = true} i = i + 1 end -- РњР°СЂРѕРґС‘СЂ
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8020', level = 1, unique = true} i = i + 1 end -- РЎС‚РёРЅРіРµСЂ
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8212', level = 1, unique = true} i = i + 1 end -- РџСЂР°СЂРѕРґРёС‚РµР»СЊ
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7579', level = 1, unique = true} i = i + 1 end -- РљРµРЅС‚Р°РІСЂ-РіРІР°СЂРґРµРµС†
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8024', level = 1, unique = true} i = i + 1  --
-        else unitsMercenaries[i] = {id = 'g000uu8023', level = 1, unique = true} i = i + 1 end -- РЎС‚СЂР°Р¶РЅРёРє
-        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8027', level = 1, unique = true} i = i + 1  -- РђСЂС…РѕРЅС‚
-        else unitsMercenaries[i] = {id = 'g000uu8028', level = 1, unique = true} i = i + 1 end -- РўРёСѓСЂРі
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7578', level = 1, unique = true} i = i + 1 end 
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8258', level = 1, unique = true} i = i + 1 end
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8233', level = 1, unique = true} i = i + 1 end
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8052', level = 1, unique = true} i = i + 1 end
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8020', level = 1, unique = true} i = i + 1 end
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8212', level = 1, unique = true} i = i + 1 end
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7579', level = 1, unique = true} i = i + 1 end
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8024', level = 1, unique = true} i = i + 1
+        else unitsMercenaries[i] = {id = 'g000uu8023', level = 1, unique = true} i = i + 1 end
+        if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8027', level = 1, unique = true} i = i + 1
+        else unitsMercenaries[i] = {id = 'g000uu8028', level = 1, unique = true} i = i + 1 end
     end
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8237', level = 1, unique = true} i = i + 1 end -- РїРµСЂРІРѕСЂРѕРґРЅР°СЏ СЃСѓС‰РЅРѕСЃС‚СЊ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8153', level = 1, unique = true} i = i + 1 end -- Р¶РЅРµС†
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8260', level = 1, unique = true} i = i + 1 end -- Р�СЃРєСѓСЃРёС‚РµР»СЊ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5020', level = 1, unique = true} i = i + 1 end -- Р‘РµР»С‹Р№ РґСЂР°РєРѕРЅ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu6115', level = 1, unique = true} i = i + 1 end -- РљРѕСЂРѕР»СЊ РіРЅРѕРјРѕРІ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu6117', level = 1, unique = true} i = i + 1 end -- РљРѕСЃС‚СЏРЅРѕР№ Р»РѕСЂРґ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5014', level = 1, unique = true} i = i + 1 end -- РҐР°РЅ РћСЂРєРѕРІ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8197', level = 1, unique = true} i = i + 1 end -- Р–С‘Р»С‚С‹Р№ РґСЂР°РєРѕРЅ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7566', level = 1, unique = true} i = i + 1 end -- РџРµСЂРІРѕСЂРѕРґРЅР°СЏ СЃСѓС‰РЅРѕСЃС‚СЊ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5008', level = 1, unique = true} i = i + 1 end -- РџРѕРІРµР»РёС‚РµР»СЊ Р­Р»СЊС„РѕРІ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8278', level = 1, unique = true} i = i + 1 end -- Р‘РѕР¶РµСЃС‚РІРµРЅРЅР°СЏ РґР»Р°РЅСЊ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5023', level = 1, unique = true} i = i + 1 end -- Р—РµР»С‘РЅС‹Р№ РґСЂР°РєРѕРЅ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7600', level = 1, unique = true} i = i + 1 end -- Р”Р»Р°РЅСЊ Р�РЅРєРІРёР·РёС†РёРё
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8255', level = 1, unique = true} i = i + 1 end -- Р­Р»СЊС„-С‚РµРЅСЊ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5019', level = 1, unique = true} i = i + 1 end -- РљСЂР°СЃРЅС‹Р№ РґСЂР°РєРѕРЅ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8231', level = 1, unique = true} i = i + 1 end -- РљР°С‚Р°С„СЂР°РєС‚Р°СЂРёР№
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8269', level = 1, unique = true} i = i + 1 end -- РљСЂРѕРІР°РІС‹Р№ РґСЂР°РєРѕРЅ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7589', level = 1, unique = true} i = i + 1 end -- РћСЃРєРІРµСЂРЅРёС‚РµР»СЊ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8244', level = 1, unique = true} i = i + 1 end -- РћС‚СЃС‚СѓРїРЅРёРє
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5010', level = 1, unique = true} i = i + 1 end -- РћР±Р»Р°С‡РЅР°СЏ РїРѕРіРёР±РµР»СЊ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7567', level = 1, unique = true} i = i + 1 end -- РџРµСЂРІРѕСЂРѕРґРЅР°СЏ СЃСѓС‰РЅРѕСЃС‚СЊ
-    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5021', level = 1, unique = true} i = i + 1 end -- РЎРёРЅРёР№ РґСЂР°РєРѕРЅ
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8237', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8153', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8260', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5020', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu6115', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu6117', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5014', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8197', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7566', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5008', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8278', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5023', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu7600', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8255', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5019', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8231', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g001uu8269', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7589', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu8244', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5010', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu7567', level = 1, unique = true} i = i + 1 end
+    if math.random(0,1) == 1 then unitsMercenaries[i] = {id = 'g000uu5021', level = 1, unique = true} i = i + 1 end 
     return {
         units = unitsMercenaries,
         guard = getGuard
@@ -1800,7 +1798,7 @@ function getReward(Type, Zone)
     elseif Type == 'guardtownt2' and Zone == 'zonesmeja' then
         table.insert(rewardItems, {id = 'g001ig0378', min = 1, max = 1})
         table.insert(rewardItems, {id = 'g000ig0006', min = 1, max = 1})
-        table.insert(rewardItems, {id = 'g001ig0530', min = 1, max = 1}) -- Р В Р’В±Р В Р’В°Р В Р вЂ¦Р В РЎвЂќР В Р’В° Р В Р вЂ¦Р В Р’В° Р РЋРІР‚С™Р В Р’В°Р В Р’В»Р В РЎвЂ�Р В РЎвЂќР В РЎвЂ�
+        table.insert(rewardItems, {id = 'g001ig0530', min = 1, max = 1}) 
         table.insert(rewardItems, {id = LowElexir[math.random(#LowElexir)], min = 1, max = 1})
         table.insert(rewardItems, {id = ElexirProtection[math.random(#ElexirProtection)], min = 1, max = 1})
 
@@ -2733,7 +2731,7 @@ function getTemplateContents(races)
 end
 
 template = {
-    name = 'Double Trouble 1.2a',
+    name = 'Double Trouble 1.2',
     description = 'Double Trouble 1.2 by iSkromny & Nexx, sMNS2, 72x72, 4 players, 2x2 \nTimer: First day: 480, next days: 360',
     minSize = 72,
     maxSize = 72,
