@@ -1,4 +1,4 @@
-#"Double Trouble"
+# "Double Trouble"
 
 ## Шаблон "Double Trouble" генерирует карту размером 72х72 для командной игры формата 2х2. 
 
