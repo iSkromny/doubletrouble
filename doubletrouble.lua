@@ -1025,7 +1025,6 @@ function getResourceMarket(Guard)
                         { Resource.Gold, r3, r2 },
                         { Resource.GroveMana, r1, r2 }
                         }
-                    }
                     },
                 }
             end
@@ -1111,18 +1110,17 @@ function getResourceMarket(Guard)
                             { Resource.Gold, r3, r2 },
                             { Resource.GroveMana, r1, r2 }
                             }
-                        }
                         },
                     }
                 end
         ]],
             stock = {
                 {resource = Resource.Gold, value = { min = 0, max = 0 }},
-                {resource = Resource.GroveMana, value = { min = 400, max = 400 }},
-                {resource = Resource.LifeMana, value = { min = 400, max = 400 }},
-                {resource = Resource.RunicMana, value = { min = 400, max = 400 }},
-                {resource = Resource.DeathMana, value = { min = 400, max = 400 }},
-                {resource = Resource.InfernalMana, value = { min = 400, max = 400 }}
+                {resource = Resource.GroveMana, value = { min = 300, max = 300 }},
+                {resource = Resource.LifeMana, value = { min = 300, max = 300 }},
+                {resource = Resource.RunicMana, value = { min = 300, max = 300 }},
+                {resource = Resource.DeathMana, value = { min = 300, max = 300 }},
+                {resource = Resource.InfernalMana, value = { min = 300, max = 300 }}
                 },
                 guard = Guard
             }
